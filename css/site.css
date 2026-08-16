@@ -43,17 +43,19 @@ body[dir="rtl"] .section-head h2 {
 
 .noise {
   z-index: 0;
-  opacity: 0.09;
+  opacity: 0.035;
+  filter: blur(1.2px);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .glow {
   z-index: 0;
-  filter: blur(56px);
+  inset: -18%;
+  filter: blur(160px);
   background:
-    radial-gradient(ellipse 80% 55% at 50% 12%, rgba(255, 77, 141, 0.38), transparent 58%),
-    radial-gradient(circle at 88% 72%, rgba(255, 77, 141, 0.16), transparent 38%),
-    radial-gradient(circle at 12% 84%, rgba(255, 77, 141, 0.14), transparent 36%);
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(255, 77, 141, 0.4), transparent 64%),
+    radial-gradient(circle at 82% 68%, rgba(255, 77, 141, 0.16), transparent 46%),
+    radial-gradient(circle at 16% 82%, rgba(160, 50, 120, 0.14), transparent 44%);
 }
 
 .nav,
