@@ -18,6 +18,15 @@ const copy = {
     versions_title: "Versions",
     versions_sub: "New builds show up here. Latest is always on top.",
     links_title: "Links",
+    about_title: "What is Nazzil?",
+    about_body: "Nazzil is an Android app, not a social profile. It is a video downloader for YouTube, TikTok, Instagram, and Facebook. Install the Nazzil APK, paste a link, and the file lands in your gallery.",
+    faq_title: "FAQ",
+    faq_1_q: "What is the Nazzil app?",
+    faq_1_a: "Nazzil is a free Android video downloader. This website is the official place to get the Nazzil APK.",
+    faq_2_q: "How do I install Nazzil?",
+    faq_2_a: "Tap Download APK on this page, open the file on your Android phone, and allow install from this source.",
+    faq_3_q: "Which apps does Nazzil support?",
+    faq_3_a: "YouTube, TikTok, Instagram, and Facebook, including Reels and Shorts.",
     get: "Get",
   },
   ar: {
@@ -39,6 +48,15 @@ const copy = {
     versions_title: "الإصدارات",
     versions_sub: "كل إصدار جديد يظهر هنا. الأحدث فوق.",
     links_title: "روابط",
+    about_title: "شنو نازل؟",
+    about_body: "نازل تطبيق أندرويد، مو حساب سوشيال. يحمّل فيديوهات يوتيوب وتيك توك وإنستغرام وفيسبوك. ثبّت الـ APK، الصق الرابط، والفيديو ينزل بالمعرض.",
+    faq_title: "أسئلة",
+    faq_1_q: "شنو تطبيق نازل؟",
+    faq_1_a: "نازل تطبيق مجاني لتحميل الفيديو على أندرويد. هذا الموقع الرسمي لتحميل الـ APK.",
+    faq_2_q: "كيف أثبّت نازل؟",
+    faq_2_a: "اضغط حمّل APK بهالصفحة، افتح الملف على هاتفك، واسمح بالتثبيت.",
+    faq_3_q: "نازل يدعم شنو؟",
+    faq_3_a: "يوتيوب، تيك توك، إنستغرام، وفيسبوك، بما فيها الريلز والشورتس.",
     get: "حمّل",
   },
 };
@@ -56,6 +74,10 @@ function applyLang() {
   document.body.dir = lang === "ar" ? "rtl" : "ltr";
   langToggle.textContent = lang === "ar" ? "EN" : "AR";
   const dict = copy[lang];
+  document.title =
+    lang === "ar"
+      ? "نازل — تطبيق أندرويد لتحميل فيديوهات يوتيوب وتيك توك وإنستغرام وفيسبوك"
+      : "Nazzil App — Android video downloader for YouTube, TikTok, Instagram & Facebook";
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (dict[key]) el.textContent = dict[key];

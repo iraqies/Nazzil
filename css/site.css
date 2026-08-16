@@ -330,6 +330,47 @@ footer {
   font-size: 14px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.about,
+.faq {
+  padding: 0 7vw 10vh;
+  max-width: 860px;
+}
+
+.about p,
+.faq p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+}
+
+.faq summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq details p {
+  margin: 10px 0 0;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
