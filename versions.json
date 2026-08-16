@@ -1,0 +1,17 @@
+{
+  "latest": "1.0",
+  "releases": [
+    {
+      "version": "1.0",
+      "date": "2026-08-16",
+      "apk": "downloads/nazzil-1.0.apk",
+      "title": "First release",
+      "notes": [
+        "YouTube, TikTok, Instagram, and Facebook",
+        "Saves into Gallery → Movies → Nazzil",
+        "Arabic and English",
+        "Copy a link, tap Yes, download"
+      ]
+    }
+  ]
+}
