@@ -177,17 +177,28 @@ footer {
 .platforms span {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 8px 14px;
-  color: var(--muted);
+  padding: 7px 16px 7px 7px;
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.platforms .mark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #111;
+  overflow: hidden;
 }
 
 .platforms img {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .grid {
