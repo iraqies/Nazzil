@@ -49,10 +49,11 @@ body[dir="rtl"] .section-head h2 {
 
 .glow {
   z-index: 0;
+  filter: blur(56px);
   background:
-    radial-gradient(ellipse 80% 55% at 50% 12%, rgba(255, 77, 141, 0.3), transparent 58%),
-    radial-gradient(circle at 88% 72%, rgba(255, 77, 141, 0.12), transparent 38%),
-    radial-gradient(circle at 12% 84%, rgba(255, 77, 141, 0.1), transparent 36%);
+    radial-gradient(ellipse 80% 55% at 50% 12%, rgba(255, 77, 141, 0.38), transparent 58%),
+    radial-gradient(circle at 88% 72%, rgba(255, 77, 141, 0.16), transparent 38%),
+    radial-gradient(circle at 12% 84%, rgba(255, 77, 141, 0.14), transparent 36%);
 }
 
 .nav,
