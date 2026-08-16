@@ -1,6 +1,16 @@
 {
-  "latest": "1.1",
+  "latest": "1.2",
   "releases": [
+    {
+      "version": "1.2",
+      "date": "2026-08-16",
+      "apk": "downloads/nazzil-1.2.apk",
+      "title": "Much smaller app",
+      "notes": [
+        "APK cut from ~85 MB to a normal size",
+        "Same downloaders, without the huge bundled engine"
+      ]
+    },
     {
       "version": "1.1",
       "date": "2026-08-16",
