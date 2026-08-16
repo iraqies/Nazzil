@@ -32,28 +32,33 @@ body[dir="rtl"] .section-head h2 {
   letter-spacing: 0;
 }
 
-.noise,
-.glow {
+.backdrop {
   pointer-events: none;
   position: absolute;
-  inset: 0;
-  width: 100%;
-  min-height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 115vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.noise,
+.glow {
+  position: absolute;
+  inset: -30%;
 }
 
 .noise {
-  z-index: 0;
   opacity: 0.035;
-  filter: blur(1.2px);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .glow {
-  z-index: 0;
-  inset: -18%;
-  filter: blur(160px);
+  filter: blur(140px);
+  transform: translateZ(0);
   background:
-    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(255, 77, 141, 0.4), transparent 64%),
+    radial-gradient(ellipse 90% 70% at 50% 8%, rgba(255, 77, 141, 0.42), transparent 62%),
     radial-gradient(circle at 82% 68%, rgba(255, 77, 141, 0.16), transparent 46%),
     radial-gradient(circle at 16% 82%, rgba(160, 50, 120, 0.14), transparent 44%);
 }
