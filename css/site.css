@@ -13,7 +13,9 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(255, 77, 141, 0.16), transparent 55%),
+    #140814;
   overflow-x: clip;
 }
 
@@ -35,32 +37,48 @@ body[dir="rtl"] .section-head h2 {
 .backdrop {
   pointer-events: none;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 115vh;
+  inset: 0;
   overflow: hidden;
   z-index: 0;
 }
 
-.noise,
-.glow {
-  position: absolute;
-  inset: -30%;
-}
-
 .noise {
-  opacity: 0.035;
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.glow {
-  filter: blur(140px);
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
   transform: translateZ(0);
-  background:
-    radial-gradient(ellipse 90% 70% at 50% 8%, rgba(255, 77, 141, 0.42), transparent 62%),
-    radial-gradient(circle at 82% 68%, rgba(255, 77, 141, 0.16), transparent 46%),
-    radial-gradient(circle at 16% 82%, rgba(160, 50, 120, 0.14), transparent 44%);
+}
+
+.orb-a {
+  top: -8%;
+  left: 50%;
+  width: min(1100px, 120vw);
+  height: min(720px, 85vh);
+  transform: translateX(-50%) translateZ(0);
+  background: rgba(255, 77, 141, 0.42);
+}
+
+.orb-b {
+  top: 48%;
+  right: -12%;
+  width: min(640px, 70vw);
+  height: min(640px, 70vw);
+  background: rgba(255, 77, 141, 0.2);
+}
+
+.orb-c {
+  top: 78%;
+  left: -14%;
+  width: min(700px, 75vw);
+  height: min(700px, 75vw);
+  background: rgba(160, 50, 120, 0.22);
 }
 
 .nav,
