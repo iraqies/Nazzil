@@ -1,6 +1,18 @@
 {
-  "latest": "1.0",
+  "latest": "1.1",
   "releases": [
+    {
+      "version": "1.1",
+      "date": "2026-08-16",
+      "apk": "downloads/nazzil-1.1.apk",
+      "title": "Auto-update and extras",
+      "notes": [
+        "In-app update from the Nazzil site",
+        "About and credits",
+        "More download backups if one path breaks",
+        "Confetti sound when a download finishes"
+      ]
+    },
     {
       "version": "1.0",
       "date": "2026-08-16",
