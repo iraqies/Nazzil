@@ -1,5 +1,8 @@
 const copy = {
   en: {
+    brand: "Nazzil",
+    brand_kind: "App",
+    footer_brand: "Nazzil app",
     nav_download: "Download",
     nav_versions: "Versions",
     nav_links: "Links",
@@ -24,6 +27,9 @@ const copy = {
     get: "Get",
   },
   ar: {
+    brand: "نزل",
+    brand_kind: "تطبيق",
+    footer_brand: "تطبيق نزل",
     nav_download: "تحميل",
     nav_versions: "الإصدارات",
     nav_links: "روابط",
@@ -35,7 +41,7 @@ const copy = {
     download: "حمّل APK",
     see_versions: "الإصدارات",
     feat_1_t: "انسخ الرابط",
-    feat_1_d: "نازل يلتقط روابط يوتيوب وتيك توك وإنستغرام وفيسبوك ويسألك إذا تريده.",
+    feat_1_d: "نزل يلتقط روابط يوتيوب وتيك توك وإنستغرام وفيسبوك ويسألك إذا تريده.",
     feat_2_t: "اختار الجودة",
     feat_2_d: "HD أو SD أو صوت فقط. أنت تختار.",
     feat_3_t: "ينزل بالمعرض",
@@ -43,8 +49,8 @@ const copy = {
     versions_title: "الإصدارات",
     versions_sub: "كل إصدار جديد يظهر هنا. الأحدث فوق.",
     links_title: "روابط",
-    about_title: "شنو نازل؟",
-    about_body: "نازل تطبيق أندرويد، مو حساب سوشيال. يحمّل فيديوهات يوتيوب وتيك توك وإنستغرام وفيسبوك. ثبّت الـ APK، الصق الرابط، والفيديو ينزل بالمعرض.",
+    about_title: "شنو نزل؟",
+    about_body: "نزل تطبيق أندرويد، مو حساب سوشيال. يحمّل فيديوهات يوتيوب وتيك توك وإنستغرام وفيسبوك. ثبّت الـ APK، الصق الرابط، والفيديو ينزل بالمعرض.",
     get: "حمّل",
   },
 };
@@ -69,7 +75,7 @@ function applyLang() {
   const dict = copy[lang];
   document.title =
     lang === "ar"
-      ? "نازل — تطبيق أندرويد لتحميل فيديوهات يوتيوب وتيك توك وإنستغرام وفيسبوك"
+      ? "نزل — تطبيق أندرويد لتحميل فيديوهات يوتيوب وتيك توك وإنستغرام وفيسبوك"
       : "Nazzil App — Android video downloader for YouTube, TikTok, Instagram & Facebook";
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
