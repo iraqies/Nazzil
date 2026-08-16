@@ -214,6 +214,24 @@ footer {
   line-height: 1;
 }
 
+.supports .colon {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+body[dir="rtl"] .supports {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  letter-spacing: 0;
+}
+
+.dl-count {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .platform-list {
   display: flex;
   flex-wrap: wrap;
@@ -342,33 +360,14 @@ footer {
   border: 0;
 }
 
-.about,
-.faq {
+.about {
   padding: 0 7vw 10vh;
   max-width: 860px;
 }
 
-.about p,
-.faq p {
+.about p {
   color: var(--muted);
   line-height: 1.6;
-}
-
-.faq details {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 16px 20px;
-  margin-bottom: 10px;
-}
-
-.faq summary {
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.faq details p {
-  margin: 10px 0 0;
 }
 
 footer {

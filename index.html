@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/site.css?v=5" />
+    <link rel="stylesheet" href="css/site.css?v=6" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -62,35 +62,6 @@
               "price": "0",
               "priceCurrency": "USD"
             }
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is Nazzil?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Nazzil is an Android app for downloading YouTube, TikTok, Instagram, and Facebook videos to your phone gallery."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I download the Nazzil app?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Open the official Nazzil site and tap Download APK. Install the APK on your Android phone."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is Nazzil a Faceit or Instagram user?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. Nazzil is an Android video downloader app. This site is the official download page for the Nazzil APK."
-                }
-              }
-            ]
           }
         ]
       }
@@ -124,16 +95,20 @@
         <p class="tagline" data-i18n="tagline">Download the video. Keep it.</p>
         <p class="sub" data-i18n="sub">YouTube, TikTok, Instagram, Facebook. Saved to your gallery. No account. No watermark hunt.</p>
         <div class="cta-row">
-          <a class="btn" id="download-btn" href="downloads/nazzil-1.0.apk">
+          <a class="btn js-download" id="download-btn" href="downloads/nazzil-1.0.apk">
             <span data-i18n="download">Download APK</span>
             <small id="download-ver">1.0</small>
           </a>
           <a class="btn ghost" href="#versions" data-i18n="see_versions">See versions</a>
         </div>
+        <p class="dl-count">
+          <span id="dl-count-num">0</span>
+          <span data-i18n="downloads">downloads</span>
+        </p>
       </section>
 
       <section class="platforms" aria-label="Supported platforms">
-        <p class="supports" data-i18n="supports">supports:</p>
+        <p class="supports"><span data-i18n="supports">supports</span><span class="colon">:</span></p>
         <div class="platform-list">
           <span><i class="mark"><img src="assets/youtube.svg" alt="YouTube" /></i>YouTube</span>
           <span><i class="mark"><img src="assets/tiktok.svg" alt="TikTok" /></i>TikTok</span>
@@ -170,24 +145,6 @@
           <h2 data-i18n="about_title">What is Nazzil?</h2>
           <p data-i18n="about_body">Nazzil is an Android app, not a social profile. It is a video downloader for YouTube, TikTok, Instagram, and Facebook. Install the Nazzil APK, paste a link, and the file lands in your gallery.</p>
         </div>
-      </section>
-
-      <section class="faq" id="faq">
-        <div class="section-head">
-          <h2 data-i18n="faq_title">FAQ</h2>
-        </div>
-        <details>
-          <summary data-i18n="faq_1_q">What is the Nazzil app?</summary>
-          <p data-i18n="faq_1_a">Nazzil is a free Android video downloader. This website is the official place to get the Nazzil APK.</p>
-        </details>
-        <details>
-          <summary data-i18n="faq_2_q">How do I install Nazzil?</summary>
-          <p data-i18n="faq_2_a">Tap Download APK on this page, open the file on your Android phone, and allow install from this source.</p>
-        </details>
-        <details>
-          <summary data-i18n="faq_3_q">Which apps does Nazzil support?</summary>
-          <p data-i18n="faq_3_a">YouTube, TikTok, Instagram, and Facebook, including Reels and Shorts.</p>
-        </details>
       </section>
 
       <section class="links" id="links">

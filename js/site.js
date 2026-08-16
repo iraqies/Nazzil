@@ -6,7 +6,8 @@ const copy = {
     eyebrow: "Android · Version 1.0",
     tagline: "Download the video. Keep it.",
     sub: "YouTube, TikTok, Instagram, Facebook. Saved to your gallery. No account. No watermark hunt.",
-    supports: "supports:",
+    supports: "supports",
+    downloads: "downloads",
     download: "Download APK",
     see_versions: "See versions",
     feat_1_t: "Copy a link",
@@ -20,13 +21,6 @@ const copy = {
     links_title: "Links",
     about_title: "What is Nazzil?",
     about_body: "Nazzil is an Android app, not a social profile. It is a video downloader for YouTube, TikTok, Instagram, and Facebook. Install the Nazzil APK, paste a link, and the file lands in your gallery.",
-    faq_title: "FAQ",
-    faq_1_q: "What is the Nazzil app?",
-    faq_1_a: "Nazzil is a free Android video downloader. This website is the official place to get the Nazzil APK.",
-    faq_2_q: "How do I install Nazzil?",
-    faq_2_a: "Tap Download APK on this page, open the file on your Android phone, and allow install from this source.",
-    faq_3_q: "Which apps does Nazzil support?",
-    faq_3_a: "YouTube, TikTok, Instagram, and Facebook, including Reels and Shorts.",
     get: "Get",
   },
   ar: {
@@ -36,7 +30,8 @@ const copy = {
     eyebrow: "أندرويد · الإصدار 1.0",
     tagline: "نزّل الفيديو. خليه عندك.",
     sub: "يوتيوب، تيك توك، إنستغرام، فيسبوك. ينحفظ بالمعرض. بلا حساب.",
-    supports: "يدعم:",
+    supports: "يدعم",
+    downloads: "تنزيلات",
     download: "حمّل APK",
     see_versions: "الإصدارات",
     feat_1_t: "انسخ الرابط",
@@ -50,13 +45,6 @@ const copy = {
     links_title: "روابط",
     about_title: "شنو نازل؟",
     about_body: "نازل تطبيق أندرويد، مو حساب سوشيال. يحمّل فيديوهات يوتيوب وتيك توك وإنستغرام وفيسبوك. ثبّت الـ APK، الصق الرابط، والفيديو ينزل بالمعرض.",
-    faq_title: "أسئلة",
-    faq_1_q: "شنو تطبيق نازل؟",
-    faq_1_a: "نازل تطبيق مجاني لتحميل الفيديو على أندرويد. هذا الموقع الرسمي لتحميل الـ APK.",
-    faq_2_q: "كيف أثبّت نازل؟",
-    faq_2_a: "اضغط حمّل APK بهالصفحة، افتح الملف على هاتفك، واسمح بالتثبيت.",
-    faq_3_q: "نازل يدعم شنو؟",
-    faq_3_a: "يوتيوب، تيك توك، إنستغرام، وفيسبوك، بما فيها الريلز والشورتس.",
     get: "حمّل",
   },
 };
@@ -66,8 +54,13 @@ const versionList = document.getElementById("version-list");
 const downloadBtn = document.getElementById("download-btn");
 const downloadVer = document.getElementById("download-ver");
 const footerVer = document.getElementById("footer-ver");
+const downloadCountEl = document.getElementById("dl-count-num");
+
+const COUNTER_GET = "https://api.countapi.xyz/get/nazzil-official/apk-downloads";
+const COUNTER_HIT = "https://api.countapi.xyz/hit/nazzil-official/apk-downloads";
 
 let lang = localStorage.getItem("nazzil-lang") || "en";
+let downloadCount = Number(localStorage.getItem("nazzil-dl-count") || 0);
 
 function applyLang() {
   document.documentElement.lang = lang;
@@ -82,6 +75,58 @@ function applyLang() {
     const key = el.getAttribute("data-i18n");
     if (dict[key]) el.textContent = dict[key];
   });
+  renderDownloadCount();
+}
+
+function renderDownloadCount() {
+  if (!downloadCountEl) {
+    return;
+  }
+  downloadCountEl.textContent = Number(downloadCount || 0).toLocaleString(lang === "ar" ? "ar" : "en");
+}
+
+function readCountPayload(data) {
+  if (typeof data?.value === "number") {
+    return data.value;
+  }
+  if (typeof data?.count === "number") {
+    return data.count;
+  }
+  return null;
+}
+
+function loadDownloadCount() {
+  renderDownloadCount();
+  fetch(COUNTER_GET)
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((data) => {
+      const value = readCountPayload(data);
+      if (value == null) {
+        return;
+      }
+      downloadCount = value;
+      localStorage.setItem("nazzil-dl-count", String(value));
+      renderDownloadCount();
+    })
+    .catch(() => {});
+}
+
+function bumpDownloadCount() {
+  downloadCount += 1;
+  localStorage.setItem("nazzil-dl-count", String(downloadCount));
+  renderDownloadCount();
+  fetch(COUNTER_HIT)
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((data) => {
+      const value = readCountPayload(data);
+      if (value == null) {
+        return;
+      }
+      downloadCount = value;
+      localStorage.setItem("nazzil-dl-count", String(value));
+      renderDownloadCount();
+    })
+    .catch(() => {});
 }
 
 langToggle.addEventListener("click", () => {
@@ -91,6 +136,12 @@ langToggle.addEventListener("click", () => {
 });
 
 applyLang();
+loadDownloadCount();
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".js-download")) {
+    bumpDownloadCount();
+  }
+});
 
 fetch("versions.json")
   .then((r) => r.json())
@@ -113,7 +164,7 @@ fetch("versions.json")
             <small>${rel.date}</small>
             <ul>${rel.notes.map((n) => `<li>${n}</li>`).join("")}</ul>
           </div>
-          <a class="btn" href="${rel.apk}">${copy[lang].get} ${rel.version}</a>
+          <a class="btn js-download" href="${rel.apk}">${copy[lang].get} ${rel.version}</a>
         </article>
       `,
       )
