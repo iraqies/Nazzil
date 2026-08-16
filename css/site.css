@@ -13,15 +13,16 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--bg);
+  background: transparent;
   color: var(--cream);
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  overflow-x: hidden;
 }
 
 body[dir="rtl"] .hero h1,
@@ -35,6 +36,9 @@ body[dir="rtl"] .section-head h2 {
   pointer-events: none;
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .noise {
@@ -46,8 +50,9 @@ body[dir="rtl"] .section-head h2 {
 .glow {
   z-index: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(255, 77, 141, 0.28), transparent 55%),
-    radial-gradient(circle at 90% 80%, rgba(255, 77, 141, 0.08), transparent 35%);
+    radial-gradient(ellipse 80% 55% at 50% 12%, rgba(255, 77, 141, 0.3), transparent 58%),
+    radial-gradient(circle at 88% 72%, rgba(255, 77, 141, 0.12), transparent 38%),
+    radial-gradient(circle at 12% 84%, rgba(255, 77, 141, 0.1), transparent 36%);
 }
 
 .nav,
@@ -170,8 +175,18 @@ footer {
 .platforms {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   padding: 0 7vw 8vh;
+}
+
+.platforms .supports {
+  margin: 0 6px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
 .platforms span {
