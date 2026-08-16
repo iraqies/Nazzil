@@ -321,6 +321,11 @@ footer {
 }
 
 @media (max-width: 800px) {
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .nav nav {
     display: none;
   }
