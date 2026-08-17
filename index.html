@@ -7,7 +7,7 @@
     <meta name="description" content="Download the Nazzil app for Android. Nazzil is a video downloader for YouTube, TikTok, Instagram, and Facebook. Free APK, Arabic and English, saves to your gallery." />
     <meta name="application-name" content="Nazzil" />
     <meta name="apple-mobile-web-app-title" content="Nazzil" />
-    <meta name="theme-color" content="#FF4D8D" />
+    <meta name="theme-color" content="#111111" />
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="dhPhgThfyOLJiAPS8b09QhGwtILFCcfe6QaIlAOSCBw" />
     <link rel="canonical" href="https://iraqies.github.io/Nazzil/" />
@@ -33,8 +33,8 @@
     <meta name="twitter:image" content="https://iraqies.github.io/Nazzil/assets/og-3.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/site.css?v=8" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/site.css?v=9" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -68,20 +68,15 @@
     </script>
   </head>
   <body>
-    <div class="backdrop" aria-hidden="true">
-      <div class="wash"></div>
-      <div class="grid-bg"></div>
-      <div class="spot"></div>
-      <div class="grain"></div>
-    </div>
+    <div class="bar" aria-hidden="true"></div>
 
     <header class="nav">
       <a class="brand" href="#top">
-        <img src="assets/icon.png" alt="Nazzil app logo" width="36" height="36" />
+        <img src="assets/icon.png" alt="Nazzil app logo" width="32" height="32" />
         <span data-i18n="brand">Nazzil</span>
       </a>
       <nav>
-        <a href="#download" data-i18n="nav_download">Download</a>
+        <a href="#how" data-i18n="nav_how">How it works</a>
         <a href="#versions" data-i18n="nav_versions">Versions</a>
         <a href="#links" data-i18n="nav_links">Links</a>
       </nav>
@@ -90,46 +85,66 @@
 
     <main id="top">
       <section class="hero">
-        <p class="eyebrow" data-i18n="eyebrow">Android · Version 1.0</p>
-        <h1><span data-i18n="brand">Nazzil</span> <span class="sr-only" data-i18n="brand_kind">App</span></h1>
-        <p class="tagline" data-i18n="tagline">Download the video. Keep it.</p>
-        <p class="sub" data-i18n="sub">YouTube, TikTok, Instagram, Facebook. Saved to your gallery. No account. No watermark hunt.</p>
-        <div class="cta-row">
-          <a class="btn js-download" id="download-btn" href="downloads/nazzil-1.2.apk">
-            <span data-i18n="download">Download APK</span>
-            <small id="download-ver">1.2</small>
-          </a>
-          <a class="btn ghost" href="#versions" data-i18n="see_versions">See versions</a>
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">Android · Version 1.2</p>
+          <h1 data-i18n="tagline">Download the video. Keep it.</h1>
+          <p class="sub" data-i18n="sub">YouTube, TikTok, Instagram, Facebook. Saved to your gallery. No account.</p>
+          <div class="cta-row">
+            <a class="btn js-download" id="download-btn" href="downloads/nazzil-1.2.apk">
+              <span data-i18n="download">Download APK</span>
+              <small id="download-ver">1.2</small>
+            </a>
+            <a class="btn ghost" href="#versions" data-i18n="see_versions">See versions</a>
+          </div>
+          <p class="dl-count">
+            <span id="dl-count-num">0</span>
+            <span data-i18n="downloads">downloads</span>
+          </p>
+          <div class="platform-list" aria-label="Supported platforms">
+            <span><i class="mark"><img src="assets/youtube.svg" alt="" /></i>YouTube</span>
+            <span><i class="mark"><img src="assets/tiktok.svg" alt="" /></i>TikTok</span>
+            <span><i class="mark"><img src="assets/instagram.svg" alt="" /></i>Instagram</span>
+            <span><i class="mark"><img src="assets/facebook.svg" alt="" /></i>Facebook</span>
+          </div>
         </div>
-        <p class="dl-count">
-          <span id="dl-count-num">0</span>
-          <span data-i18n="downloads">downloads</span>
-        </p>
+        <div class="hero-device" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-top">
+              <b>N</b>
+              <span data-i18n="brand">Nazzil</span>
+              <em data-i18n="ready">Ready</em>
+            </div>
+            <div class="phone-field" data-i18n="paste_hint">Paste or share a link</div>
+            <div class="phone-row">
+              <span data-i18n="quality_hd">HD</span>
+              <span data-i18n="quality_sd">SD</span>
+              <span data-i18n="quality_audio">Audio</span>
+            </div>
+            <div class="phone-cta" data-i18n="download">Download APK</div>
+          </div>
+        </div>
       </section>
 
-      <section class="platforms" aria-label="Supported platforms">
-        <p class="supports"><span data-i18n="supports">supports</span><span class="colon">:</span></p>
-        <div class="platform-list">
-          <span><i class="mark"><img src="assets/youtube.svg" alt="YouTube" /></i>YouTube</span>
-          <span><i class="mark"><img src="assets/tiktok.svg" alt="TikTok" /></i>TikTok</span>
-          <span><i class="mark"><img src="assets/instagram.svg" alt="Instagram" /></i>Instagram</span>
-          <span><i class="mark"><img src="assets/facebook.svg" alt="Facebook" /></i>Facebook</span>
-        </div>
+      <section class="how" id="how">
+        <ol class="steps">
+          <li>
+            <strong data-i18n="feat_1_t">Paste a link</strong>
+            <p data-i18n="feat_1_d">Paste a YouTube, TikTok, Instagram, or Facebook link. Nazzil fetches it.</p>
+          </li>
+          <li>
+            <strong data-i18n="feat_2_t">Pick a quality</strong>
+            <p data-i18n="feat_2_d">HD, SD, or audio only. You pick.</p>
+          </li>
+          <li>
+            <strong data-i18n="feat_3_t">It lands in Gallery</strong>
+            <p data-i18n="feat_3_d">It lands in your gallery. Play it, share it everywhere.</p>
+          </li>
+        </ol>
       </section>
 
-      <section class="grid" id="download">
-        <article>
-          <h2 data-i18n="feat_1_t">Paste a link</h2>
-          <p data-i18n="feat_1_d">Paste a YouTube, TikTok, Instagram, or Facebook link. Nazzil fetches it.</p>
-        </article>
-        <article>
-          <h2 data-i18n="feat_2_t">Pick a quality</h2>
-          <p data-i18n="feat_2_d">HD, SD, or audio only. You pick.</p>
-        </article>
-        <article>
-          <h2 data-i18n="feat_3_t">It lands in Gallery</h2>
-          <p data-i18n="feat_3_d">It lands in your gallery. Play it, share it everywhere.</p>
-        </article>
+      <section class="about" id="about">
+        <h2 data-i18n="about_title">What is Nazzil?</h2>
+        <p data-i18n="about_body">Nazzil is an Android app, not a social profile. It is a video downloader for YouTube, TikTok, Instagram, and Facebook. Install the Nazzil APK, paste a link, and the file lands in your gallery.</p>
       </section>
 
       <section class="versions" id="versions">
@@ -140,27 +155,18 @@
         <div id="version-list"></div>
       </section>
 
-      <section class="about" id="about">
-        <div class="section-head">
-          <h2 data-i18n="about_title">What is Nazzil?</h2>
-          <p data-i18n="about_body">Nazzil is an Android app, not a social profile. It is a video downloader for YouTube, TikTok, Instagram, and Facebook. Install the Nazzil APK, paste a link, and the file lands in your gallery.</p>
-        </div>
-      </section>
-
       <section class="links" id="links">
-        <div class="section-head">
-          <h2 data-i18n="links_title">Links</h2>
-        </div>
+        <h2 data-i18n="links_title">Links</h2>
         <div class="link-row">
           <a class="card-link" href="https://t.me/auratistic" target="_blank" rel="noreferrer">
-            <img src="assets/telegram.png" alt="Telegram" width="40" height="40" />
+            <img src="assets/telegram.png" alt="Telegram" width="36" height="36" />
             <div>
               <strong>Telegram</strong>
               <span>t.me/auratistic</span>
             </div>
           </a>
           <a class="card-link" href="https://stalk.gg/x" target="_blank" rel="noreferrer">
-            <img src="assets/stalk.png" alt="stalk.gg" width="40" height="40" />
+            <img src="assets/stalk.png" alt="stalk.gg" width="36" height="36" />
             <div>
               <strong>stalk.gg</strong>
               <span>stalk.gg/x</span>
@@ -175,6 +181,6 @@
       <span id="footer-ver">1.2</span>
     </footer>
 
-    <script src="js/site.js"></script>
+    <script src="js/site.js?v=9"></script>
   </body>
 </html>
