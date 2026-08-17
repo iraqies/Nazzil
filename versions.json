@@ -5,14 +5,14 @@
       "version": "1.2",
       "date": "2026-08-17",
       "apk": "downloads/nazzil-1.2.apk",
-      "bytes": 25531202,
-      "title": "Much smaller app",
+      "bytes": 24019074,
+      "title": "History times and faster saves",
       "notes": [
-        "APK cut from ~85 MB to a normal size",
+        "History shows when you downloaded each file",
+        "Downloads write faster and the progress bar keeps moving",
         "Won't download the same HD, SD, or audio twice if you still have it",
         "History keeps the original video link",
-        "Update download retries if the connection drops",
-        "Shows percent and size in MB while updating"
+        "APK cut from ~85 MB to a normal size"
       ]
     },
     {
