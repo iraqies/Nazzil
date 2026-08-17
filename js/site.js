@@ -157,12 +157,25 @@ document.addEventListener("click", (event) => {
   }
 });
 
+function apkHref(apk) {
+  if (!apk) return "downloads/nazzil-1.2.apk";
+  if (apk.startsWith("http")) {
+    const name = apk.split("/").pop();
+    return `downloads/${name}`;
+  }
+  return apk;
+}
+
 fetch("versions.json")
   .then((r) => r.json())
   .then((data) => {
     const latest = data.releases[0];
     if (latest) {
-      downloadBtn.href = latest.apk;
+      const href = apkHref(latest.apk);
+      downloadBtn.href = href;
+      downloadBtn.setAttribute("download", `nazzil-${latest.version}.apk`);
+      const phoneBtn = document.getElementById("phone-download");
+      if (phoneBtn) phoneBtn.href = href;
       downloadVer.textContent = latest.version;
       footerVer.textContent = latest.version;
       document.querySelector('[data-i18n="eyebrow"]').textContent =
@@ -178,7 +191,7 @@ fetch("versions.json")
             <small>${rel.date}</small>
             <ul>${rel.notes.map((n) => `<li>${n}</li>`).join("")}</ul>
           </div>
-          <a class="btn ghost js-download" href="${rel.apk}">${copy[lang].get} ${rel.version}</a>
+          <a class="btn ghost js-download" href="${apkHref(rel.apk)}">${copy[lang].get} ${rel.version}</a>
         </article>
       `,
       )
