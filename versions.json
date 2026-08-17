@@ -3,12 +3,14 @@
   "releases": [
     {
       "version": "1.2",
-      "date": "2026-08-16",
+      "date": "2026-08-17",
       "apk": "https://raw.githubusercontent.com/iraqies/Nazzil/main/downloads/nazzil-1.2.apk",
-      "bytes": 24016590,
+      "bytes": 25531202,
       "title": "Much smaller app",
       "notes": [
         "APK cut from ~85 MB to a normal size",
+        "Won't download the same HD, SD, or audio twice if you still have it",
+        "History keeps the original video link",
         "Update download retries if the connection drops",
         "Shows percent and size in MB while updating"
       ]
