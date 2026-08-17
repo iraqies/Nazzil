@@ -1,10 +1,10 @@
 :root {
-  --paper: #efe8e1;
-  --ink: #161216;
-  --mute: #6b6168;
-  --line: #d8cfc8;
+  --paper: #0c0810;
+  --ink: #f7f1f4;
+  --mute: #b5a8b4;
+  --line: #2a222c;
   --pink: #ff4d8d;
-  --phone: #0c0810;
+  --phone: #140c14;
   --cream: #f7f1f4;
 }
 
@@ -190,7 +190,7 @@ body {
   width: 280px;
   background: var(--phone);
   color: var(--cream);
-  border: 10px solid #1c161c;
+  border: 10px solid #251c28;
   padding: 22px 18px 28px;
 }
 
