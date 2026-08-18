@@ -70,11 +70,11 @@ const downloadVer = document.getElementById("download-ver");
 const footerVer = document.getElementById("footer-ver");
 const downloadCountEl = document.getElementById("dl-count-num");
 
-const COUNTER_GET = "https://api.countapi.xyz/get/nazzil-official/apk-downloads";
-const COUNTER_HIT = "https://api.countapi.xyz/hit/nazzil-official/apk-downloads";
+const COUNTER_GET = "https://countapi.mileshilliard.com/api/v1/get/iraqies-nazzil-apk";
+const COUNTER_HIT = "https://countapi.mileshilliard.com/api/v1/hit/iraqies-nazzil-apk";
 
 let lang = localStorage.getItem("nazzil-lang") || "en";
-let downloadCount = Number(localStorage.getItem("nazzil-dl-count") || 0);
+let downloadCount = 23;
 
 function applyLang() {
   document.documentElement.lang = lang;
@@ -100,13 +100,9 @@ function renderDownloadCount() {
 }
 
 function readCountPayload(data) {
-  if (typeof data?.value === "number") {
-    return data.value;
-  }
-  if (typeof data?.count === "number") {
-    return data.count;
-  }
-  return null;
+  const raw = data?.value ?? data?.count;
+  const value = Number(raw);
+  return Number.isFinite(value) ? value : null;
 }
 
 function loadDownloadCount() {
@@ -118,8 +114,7 @@ function loadDownloadCount() {
       if (value == null) {
         return;
       }
-      downloadCount = value;
-      localStorage.setItem("nazzil-dl-count", String(value));
+      downloadCount = Math.max(value, 23);
       renderDownloadCount();
     })
     .catch(() => {});
@@ -127,7 +122,6 @@ function loadDownloadCount() {
 
 function bumpDownloadCount() {
   downloadCount += 1;
-  localStorage.setItem("nazzil-dl-count", String(downloadCount));
   renderDownloadCount();
   fetch(COUNTER_HIT)
     .then((r) => (r.ok ? r.json() : Promise.reject()))
@@ -136,8 +130,7 @@ function bumpDownloadCount() {
       if (value == null) {
         return;
       }
-      downloadCount = value;
-      localStorage.setItem("nazzil-dl-count", String(value));
+      downloadCount = Math.max(value, 23);
       renderDownloadCount();
     })
     .catch(() => {});
