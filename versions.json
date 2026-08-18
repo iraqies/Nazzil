@@ -3,16 +3,16 @@
   "releases": [
     {
       "version": "1.2",
-      "date": "2026-08-17",
+      "date": "2026-08-18",
       "apk": "downloads/nazzil-1.2.apk",
-      "bytes": 24019074,
-      "title": "History times and faster saves",
+      "bytes": 24037334,
+      "title": "Light, dark, and a cleaner history",
       "notes": [
+        "Light and dark theme, or follow the phone",
+        "Play, share, original, and delete stay on one line",
         "History shows when you downloaded each file",
-        "Downloads write faster and the progress bar keeps moving",
-        "Won't download the same HD, SD, or audio twice if you still have it",
-        "History keeps the original video link",
-        "APK cut from ~85 MB to a normal size"
+        "Telegram is t.me/weirdistic",
+        "Won't download the same HD, SD, or audio twice if you still have it"
       ]
     },
     {
