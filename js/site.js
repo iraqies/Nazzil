@@ -159,7 +159,7 @@ function apkHref(apk) {
   return apk;
 }
 
-fetch("versions.json")
+fetch("versions.json?v=14")
   .then((r) => r.json())
   .then((data) => {
     const latest = data.releases[0];

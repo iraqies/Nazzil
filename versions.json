@@ -3,16 +3,16 @@
   "releases": [
     {
       "version": "1.2",
-      "date": "2026-08-18",
+      "date": "2026-08-19",
       "apk": "downloads/nazzil-1.2.apk",
-      "bytes": 24037334,
-      "title": "Audio covers and a working theme",
+      "bytes": 24055054,
+      "title": "Queue, covers, and clean names",
       "notes": [
-        "Audio downloads keep the video thumbnail as album art",
-        "Light and dark theme, or follow the phone",
-        "Play, share, original, and delete stay on one line",
-        "History shows when you downloaded each file",
-        "Telegram is t.me/weirdistic"
+        "One download at a time; the rest wait in History",
+        "Audio files keep the video thumbnail as album art",
+        "Saved files use the title, not a timestamp in the name",
+        "Confetti only shows if you are in the app",
+        "Light and dark theme, or follow the phone"
       ]
     },
     {
