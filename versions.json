@@ -3,16 +3,16 @@
   "releases": [
     {
       "version": "1.2",
-      "date": "2026-08-19",
+      "date": "2026-08-21",
       "apk": "downloads/nazzil-1.2.apk",
-      "bytes": 24055054,
-      "title": "Queue, covers, and clean names",
+      "bytes": 24071462,
+      "title": "Lyrics in the file, covers, and a download queue",
       "notes": [
+        "Audio downloads save timed lyrics in the file tags when a match exists",
+        "Album art is written into the audio file",
         "One download at a time; the rest wait in History",
-        "Audio files keep the video thumbnail as album art",
         "Saved files use the title, not a timestamp in the name",
-        "Confetti only shows if you are in the app",
-        "Light and dark theme, or follow the phone"
+        "Confetti only shows if you are in the app"
       ]
     },
     {
